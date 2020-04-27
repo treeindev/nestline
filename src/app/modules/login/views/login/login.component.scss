@@ -1,0 +1,12 @@
+.container {
+    height: 100vh;
+
+    > .cmp__cards {
+        display: block;
+        max-width: 820px;
+        margin: 0 auto;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
