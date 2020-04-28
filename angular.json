@@ -28,6 +28,7 @@
                         ],
                         "styles": [
                             "src/styles.scss",
+                            "node_modules/ionicons/dist/scss/ionicons.scss",
                             "node_modules/nestline-themes/dist/css/main.min.css"
                         ],
                         "scripts": [],
