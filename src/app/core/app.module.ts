@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 
 // Modules
 import { AppRoutingModule } from './app-routing.module';
-import { DashboardModule } from '../modules/dashboard/dashboard.module';
+import { ContentModule } from '../modules/content/content.module';
 import { LoginModule } from '../modules/login/login.module';
 
 @NgModule({
@@ -16,7 +16,7 @@ import { LoginModule } from '../modules/login/login.module';
     imports: [
         BrowserModule,
         AppRoutingModule,
-        DashboardModule,
+        ContentModule,
         LoginModule
     ],
     providers: [],
