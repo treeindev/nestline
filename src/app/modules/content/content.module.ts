@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common'; 
+
 
 import { ContentComponent } from './content.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -12,7 +14,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
         NavigationComponent,
         DashboardComponent
     ],
-    imports: [],
+    imports: [ CommonModule ],
     providers: [],
     exports: [
         ContentComponent,

@@ -12,7 +12,7 @@
     <div class="user">
         <img src="assets/img/profile.svg">
         <span>Ragnar Lodbrok</span>
-        <i class="icon ion-ios-settings secondary"></i>
-        <div class="cmp__dropdown"></div>
+        <i class="icon ion-ios-settings secondary" (click)="toggleSettings()"></i>
+        <div *ngIf="settingsVisible" class="cmp__dropdown show"></div>
     </div>
 </header>
