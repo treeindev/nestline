@@ -1,25 +1,29 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 
+// Modules
+import { BasicsModule } from './modules/basics/basics.module';
+import { ElementsModule } from './modules/elements/elements.module';
 
+// Components
 import { ContentComponent } from './content.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { DashboardComponent } from './views/dashboard/dashboard.component';
-import { EntriesComponent } from './views/entries/entries.component';
 
 @NgModule({
     declarations: [
         ContentComponent,
         HeaderComponent,
-        NavigationComponent,
-        DashboardComponent,
-        EntriesComponent
+        NavigationComponent
     ],
-    imports: [ CommonModule ],
+    imports: [ 
+        CommonModule,
+        BasicsModule
+    ],
     providers: [],
     exports: [
         ContentComponent,
+        ElementsModule
     ]
 })
 export class ContentModule { }
