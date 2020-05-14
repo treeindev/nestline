@@ -18,12 +18,12 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     ],
     imports: [ 
         CommonModule,
-        BasicsModule
+        BasicsModule,
+        ElementsModule
     ],
     providers: [],
     exports: [
-        ContentComponent,
-        ElementsModule
+        ContentComponent
     ]
 })
 export class ContentModule { }
