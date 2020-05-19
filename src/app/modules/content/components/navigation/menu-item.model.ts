@@ -1,6 +1,6 @@
 export class MenuItem {
     /**
-     * A reference to the ionicons icon to use.
+     * A reference to the ionicons icon class to use.
      */
     icon?: string;
     /**

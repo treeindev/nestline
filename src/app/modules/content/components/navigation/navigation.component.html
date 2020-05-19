@@ -1,7 +1,29 @@
 <aside class="cmp__navigation">
     <nav>
         <ol>
-            <li class="active open">
+            <li *ngFor="let item of items"
+                [ngClass]="{'active': item.active, 'open': item.expanded}"
+            >
+                <div>
+                    <!-- Item Icon -->
+                    <i *ngIf="item.icon" class="icon {{item.icon}}"></i>
+
+                    <!-- Item Name -->
+                    <span>{{item.name}}</span>
+
+                    <!-- Item dropdown's arrow (only if item has children) -->
+                    <i  *ngIf="item.children && item.children.length > 0" 
+                        [ngClass]="{'icon': true, 'ion-ios-arrow-down': true, 'up': item.expanded, 'down': !item.expanded }"
+                    ></i>
+                </div>
+                <!-- Item children's sub menu -->
+                <ol *ngIf="item.children && item.children.length > 0">
+                    <li *ngFor="let child of item.children">
+                        <span>{{child.name}}</span>
+                    </li>
+                </ol>
+            </li>
+            <!--<li class="active open">
                 <div>
                     <i class="icon ion-md-desktop"></i>
                     <span>Basics</span>
@@ -28,7 +50,7 @@
                     <i class="icon ion-ios-stats"></i>
                     <span>Analytics</span>
                 </div>
-            </li>
+            </li>-->
         </ol>
     </nav>
 </aside>
