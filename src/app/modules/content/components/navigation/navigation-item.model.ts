@@ -1,4 +1,4 @@
-export class MenuItem {
+export class NavigationItem {
     /**
      * A reference to the ionicons icon class to use.
      */
@@ -10,7 +10,7 @@ export class MenuItem {
     /**
      * Children items for this item.
      */
-    children?: Array<MenuItem>;
+    children?: Array<NavigationItem>;
     /**
      * The destination link.
      */
