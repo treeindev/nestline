@@ -7,7 +7,7 @@ import { NavigationItem } from './navigation-item.model';
     styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-    @ViewChildren('subMenu') subMenu;
+    @ViewChildren('childrenMenu') childrenMenu;
 
     protected items: Array<NavigationItem>;
 
@@ -30,27 +30,56 @@ export class NavigationComponent implements OnInit {
                 ]
             },
             {
-                name: 'Elements'
+                name: 'Elements',
+                icon: 'ion-md-cube',
+                expanded: false,
+                children: [
+                    {
+                        name: 'Buttons',
+                        link: 'buttons'
+                    },
+                    {
+                        name: 'Tooltips',
+                        link: 'tolltips'
+                    },
+                    {
+                        name: 'Breadcrumbs',
+                        link: 'breadcrumbs'
+                    },
+                    {
+                        name: 'Alert Messages',
+                        link: 'alert-messages'
+                    },
+                    {
+                        name: 'Loaders',
+                        link: 'loaders'
+                    }
+                    
+                ]
             },
             {
-                name: 'Forms'
+                name: 'Forms',
+                icon: 'ion-md-clipboard'
             },
             {
-                name: 'Tables'
+                name: 'Tables',
+                icon: 'ion-md-grid'
             },
             {
                 name: 'Layout',
                 icon: 'ion-ios-apps'
             },
             {
-                name: 'Modals'
+                name: 'Modals',
+                icon: 'ion-ios-chatboxes'
             },
             {
                 name: 'Analytics',
                 icon: 'ion-ios-stats'
             },
             {
-                name: 'Views'
+                name: 'Views',
+                icon: 'ion-md-eye'
             }
         ]
     }
@@ -64,23 +93,45 @@ export class NavigationComponent implements OnInit {
      */
     protected navigate( item: NavigationItem, index: number ): void {
         // If user has clicked on the parent of a expandable menu, 
-        // switch between expandable state. 
+        // switch between expandable state and prevent navigation.
         if ( item.children && item.children.length > 0 ) {
-            const subMenu = this.subMenu.toArray()[ index ].nativeElement;
-
-            // The element has 20px padding that needs to be substract.
-            const elementHeight = subMenu.offsetHeight - 20;
-            this.renderer.setStyle( subMenu, 'height', elementHeight + 'px' );
-            
-            // Time out is used to force javascript to render element with previous height,
-            // and then rerender the element with new height styling.
-            setTimeout( () => {
-                this.renderer.setStyle( subMenu, 'height', 0 );
-                this.renderer.setStyle( subMenu, 'margin-top', '-20px' );
-            }, 1 );
-
+            const children = this.childrenMenu.toArray()[ index ].nativeElement;
+            item.expanded ? this.collapseChildrenMenu( item, children ) : this.expandChildrenMenu( item, children );
             return;
         }
+    }
+
+    /**
+     * Collapses a children menu.
+     */
+    private collapseChildrenMenu( item: NavigationItem, children ) {
+        // The max-height is added programatically in order to enforce CSS animation.
+        this.renderer.setStyle( children, 'max-height', '100vh' );
+        
+        // Time out is used to force javascript to render element with previous height,
+        // and then rerender the element with new height styling.
+        setTimeout( () => {
+            this.renderer.setStyle( children, 'max-height', '0' );
+            this.renderer.setStyle( children, 'margin-top', '-20px' );
+
+            // Wait for CSS animation to complete and then hide sub menu.
+            setTimeout( () => {
+                item.expanded = false;
+            }, 500 );
+        }, 1 );
+    }
+
+    /**
+     * Expands a children menu.
+     */
+    private expandChildrenMenu( item: NavigationItem, children ) {
+        item.expanded = true;
+
+        // Wait for CSS class change and then force the CSS animation.
+        setTimeout( () => {
+            this.renderer.setStyle( children, 'max-height', '100vh' );
+            this.renderer.setStyle( children, 'margin-top', '0px' );
+        }, 1 );
     }
 
 }
