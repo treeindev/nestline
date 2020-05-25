@@ -22,6 +22,9 @@
                         <span (click)="navigate(child)">{{child.name}}</span>
                     </li>
                 </ol>
+
+                <!-- If item has no children, create empty HTML element to items array by 1. -->
+                <hr *ngIf="!item.children || item.children.length === 0" #childrenMenu>
             </li>
             <!--<li class="active open">
                 <div>

@@ -2,3 +2,11 @@
     transition: all 0.5s ease;
     overflow: hidden;
 }
+
+// HR tag is not been used to push new empty element to the "items" array.
+// No need to visually show it.
+hr {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}

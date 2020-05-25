@@ -67,7 +67,22 @@ export class NavigationComponent implements OnInit {
             },
             {
                 name: 'Layout',
-                icon: 'ion-ios-apps'
+                icon: 'ion-ios-apps',
+                expanded: false,
+                children: [
+                    {
+                        name: 'Cards',
+                        link: 'cards'
+                    },
+                    {
+                        name: 'Galleries',
+                        link: 'galleries'
+                    },
+                    {
+                        name: 'Grids',
+                        link: 'grids'
+                    }
+                ]
             },
             {
                 name: 'Modals',
@@ -126,6 +141,7 @@ export class NavigationComponent implements OnInit {
      */
     private expandChildrenMenu( item: NavigationItem, children ) {
         item.expanded = true;
+        this.renderer.setStyle( children, 'max-height', '0vh' );
 
         // Wait for CSS class change and then force the CSS animation.
         setTimeout( () => {
