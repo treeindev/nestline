@@ -21,7 +21,8 @@ export class NavigationComponent implements OnInit {
                 children: [
                     {
                         name: 'Typography',
-                        link: 'typography'
+                        link: 'typography',
+                        active: true
                     },
                     {
                         name: 'Colours',

@@ -18,7 +18,7 @@
                 </div>
                 <!-- Item children's sub menu -->
                 <ol *ngIf="item.children && item.children.length > 0" #childrenMenu>
-                    <li *ngFor="let child of item.children">
+                    <li *ngFor="let child of item.children" [ngClass]="{'active': child.active}">
                         <span (click)="navigate(child)">{{child.name}}</span>
                     </li>
                 </ol>
@@ -26,34 +26,6 @@
                 <!-- If item has no children, create empty HTML element to items array by 1. -->
                 <hr *ngIf="!item.children || item.children.length === 0" #childrenMenu>
             </li>
-            <!--<li class="active open">
-                <div>
-                    <i class="icon ion-md-desktop"></i>
-                    <span>Basics</span>
-                    <i class="icon ion-ios-arrow-down up"></i>
-                </div>
-                <ol>
-                    <li class="active">
-                        <span>Typography</span>
-                    </li>
-                    <li>
-                        <span>Colours</span>
-                    </li>
-                </ol>
-            </li>
-            <li>
-                <div>
-                    <i class="icon ion-ios-apps"></i>
-                    <span>Elements</span>
-                    <i class="icon ion-ios-arrow-up up"></i>
-                </div>
-            </li>
-            <li>
-                <div>
-                    <i class="icon ion-ios-stats"></i>
-                    <span>Analytics</span>
-                </div>
-            </li>-->
         </ol>
     </nav>
 </aside>

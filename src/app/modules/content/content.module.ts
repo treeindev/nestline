@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 // Modules
 import { BasicsModule } from './modules/basics/basics.module';
 import { ElementsModule } from './modules/elements/elements.module';
+import { ContentRoutingModule } from './content-routing.module';
 
 // Components
 import { ContentComponent } from './content.component';
@@ -19,7 +20,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     imports: [ 
         CommonModule,
         BasicsModule,
-        ElementsModule
+        ElementsModule,
+        ContentRoutingModule
     ],
     providers: [],
     exports: [
