@@ -19,9 +19,9 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     ],
     imports: [ 
         CommonModule,
+        ContentRoutingModule,
         BasicsModule,
-        ElementsModule,
-        ContentRoutingModule
+        ElementsModule
     ],
     providers: [],
     exports: [

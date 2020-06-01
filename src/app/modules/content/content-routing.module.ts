@@ -6,7 +6,24 @@ import { ContentComponent } from './content.component';
 const routes: Routes = [
     {
         path: '',
-        component: ContentComponent
+        component: ContentComponent,
+        children: [
+            {
+                path: 'basics',
+                loadChildren: () => import('./modules/basics/basics.module')
+                    .then(m => m.BasicsModule)
+            },
+            {
+                path: 'elements',
+                loadChildren: () => import('./modules/elements/elements.module')
+                    .then(m => m.ElementsModule)
+            },
+            {
+                path: '',
+                redirectTo: 'basics',
+                pathMatch: 'full'
+            }
+        ]
     }
 ];
 

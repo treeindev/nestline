@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewChildren, Renderer2 } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { NavigationItem } from './navigation-item.model';
 
 @Component({
@@ -11,7 +13,7 @@ export class NavigationComponent implements OnInit {
 
     protected items: Array<NavigationItem>;
 
-    constructor( private renderer: Renderer2 ) {
+    constructor( private renderer: Renderer2, private router: Router ) {
         this.items = [
             {
                 name: 'Basics',
@@ -21,12 +23,12 @@ export class NavigationComponent implements OnInit {
                 children: [
                     {
                         name: 'Typography',
-                        link: 'typography',
+                        link: '/content/basics/typography',
                         active: true
                     },
                     {
                         name: 'Colours',
-                        link: 'colours'
+                        link: '/content/basics/colours'
                     }
                 ]
             },
@@ -37,23 +39,23 @@ export class NavigationComponent implements OnInit {
                 children: [
                     {
                         name: 'Buttons',
-                        link: 'buttons'
+                        link: '/content/elements/buttons'
                     },
                     {
                         name: 'Tooltips',
-                        link: 'tolltips'
+                        link: '/content/elements/tolltips'
                     },
                     {
                         name: 'Breadcrumbs',
-                        link: 'breadcrumbs'
+                        link: '/content/elements/breadcrumbs'
                     },
                     {
                         name: 'Alert Messages',
-                        link: 'alert-messages'
+                        link: '/content/elements/alert-messages'
                     },
                     {
                         name: 'Loaders',
-                        link: 'loaders'
+                        link: '/content/elements/loaders'
                     }
                     
                 ]
@@ -108,13 +110,16 @@ export class NavigationComponent implements OnInit {
      * @param item - the navigation item user has clicked on.
      */
     protected navigate( item: NavigationItem, index: number ): void {
-        // If user has clicked on the parent of a expandable menu, 
+        // If user has clicked on the parent of an expandable menu, 
         // switch between expandable state and prevent navigation.
         if ( item.children && item.children.length > 0 ) {
             const children = this.childrenMenu.toArray()[ index ].nativeElement;
             item.expanded ? this.collapseChildrenMenu( item, children ) : this.expandChildrenMenu( item, children );
             return;
         }
+
+        // If user has clicked on a menu with no children, navigate to path.
+        this.router.navigate( [item.link] );
     }
 
     /**
