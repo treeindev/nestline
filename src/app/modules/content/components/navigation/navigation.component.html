@@ -18,8 +18,12 @@
                 </div>
                 <!-- Item children's sub menu -->
                 <ol *ngIf="item.children && item.children.length > 0" #childrenMenu>
-                    <li *ngFor="let child of item.children" [ngClass]="{'active': child.active}">
-                        <span (click)="navigate(child)">{{child.name}}</span>
+                    <li 
+                        *ngFor="let child of item.children" 
+                        [ngClass]="{'active': child.active}"
+                        (click)="navigate(child)"
+                    >
+                        <span>{{child.name}}</span>
                     </li>
                 </ol>
 

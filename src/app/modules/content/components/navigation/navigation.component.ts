@@ -103,13 +103,14 @@ export class NavigationComponent implements OnInit {
     }
 
     ngOnInit() {
+        this.updateMenuStatus();
     }
 
     /**
      * Handles the user navigation.  
      * @param item - the navigation item user has clicked on.
      */
-    protected navigate( item: NavigationItem, index: number ): void {
+    protected async navigate( item: NavigationItem, index: number ) {
         // If user has clicked on the parent of an expandable menu, 
         // switch between expandable state and prevent navigation.
         if ( item.children && item.children.length > 0 ) {
@@ -119,7 +120,8 @@ export class NavigationComponent implements OnInit {
         }
 
         // If user has clicked on a menu with no children, navigate to path.
-        this.router.navigate( [item.link] );
+        await this.router.navigate( [item.link] );
+        this.updateMenuStatus();
     }
 
     /**
@@ -154,6 +156,43 @@ export class NavigationComponent implements OnInit {
             this.renderer.setStyle( children, 'max-height', '100vh' );
             this.renderer.setStyle( children, 'margin-top', '0px' );
         }, 1 );
+    }
+
+    /**
+     * Updates the status of the navigation menu.
+     * Should be triggered after an internal navigation.
+     */
+    public updateMenuStatus() {
+        const url = this.router.url;
+
+        // Loop through all navigation items and set their active status.
+        this.items.forEach( ( item ) => {
+            let active = false;
+
+            if ( item.link && item.link === url ) {
+                item.active = true;
+                return;
+            }
+
+            if ( !item.children ) {
+                item.active = active;
+                return;
+            }
+
+            item.children.forEach( ( child ) => {
+                if ( child.link && child.link === url ) {
+                    child.active = true;
+                    active = true;
+                    console.log( child.name, child.active );
+                } else {
+                    child.active = false;
+                    console.log( child.name, child.active );
+                }
+            });
+
+            item.active = active;
+        });
+        console.log( this.items );
     }
 
 }
