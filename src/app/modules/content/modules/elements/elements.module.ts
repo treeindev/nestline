@@ -10,13 +10,15 @@ import { ElementsComponent } from './elements.component';
 import { TooltipViewComponent } from './views/tooltip-view/tooltip-view.component';
 import { LoaderViewComponent } from './views/loader-view/loader-view.component';
 import { BreadcrumbsViewComponent } from './views/breadcrumbs-view/breadcrumbs-view.component';
+import { ButtonViewComponent } from './views/button-view/button-view.component';
 
 @NgModule({
     declarations: [
         ElementsComponent,
         TooltipViewComponent, 
         LoaderViewComponent,
-        BreadcrumbsViewComponent 
+        BreadcrumbsViewComponent,
+        ButtonViewComponent 
     ],
     imports: [ 
         CommonModule,

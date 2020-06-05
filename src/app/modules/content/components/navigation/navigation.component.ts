@@ -43,7 +43,7 @@ export class NavigationComponent implements OnInit {
                     },
                     {
                         name: 'Tooltips',
-                        link: '/content/elements/tolltips'
+                        link: '/content/elements/tooltips'
                     },
                     {
                         name: 'Breadcrumbs',

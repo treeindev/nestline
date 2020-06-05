@@ -7,6 +7,7 @@ import { ElementsComponent } from './elements.component';
 import { BreadcrumbsViewComponent } from './views/breadcrumbs-view/breadcrumbs-view.component';
 import { LoaderViewComponent } from './views/loader-view/loader-view.component';
 import { TooltipViewComponent } from './views/tooltip-view/tooltip-view.component';
+import { ButtonViewComponent } from './views/button-view/button-view.component';
 
 const routes: Routes = [
     {
@@ -14,15 +15,19 @@ const routes: Routes = [
         component: ElementsComponent,
         children: [
             {
+                path: 'buttons',
+                component: ButtonViewComponent
+            },
+            {
                 path: 'breadcrumbs',
                 component: BreadcrumbsViewComponent
             },
             {
-                path: 'loader',
+                path: 'loaders',
                 component: LoaderViewComponent
             },
             {
-                path: 'tooltip',
+                path: 'tooltips',
                 component: TooltipViewComponent
             },
             {
