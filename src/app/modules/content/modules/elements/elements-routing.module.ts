@@ -8,6 +8,7 @@ import { BreadcrumbsViewComponent } from './views/breadcrumbs-view/breadcrumbs-v
 import { LoaderViewComponent } from './views/loader-view/loader-view.component';
 import { TooltipViewComponent } from './views/tooltip-view/tooltip-view.component';
 import { ButtonViewComponent } from './views/button-view/button-view.component';
+import { AlertMessagesViewComponent } from './views/alert-messages-view/alert-messages-view.component';
 
 const routes: Routes = [
     {
@@ -29,6 +30,10 @@ const routes: Routes = [
             {
                 path: 'tooltips',
                 component: TooltipViewComponent
+            },
+            {
+                path: 'alert-messages',
+                component: AlertMessagesViewComponent
             },
             {
                 path: '',

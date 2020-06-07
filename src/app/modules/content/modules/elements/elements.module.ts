@@ -11,6 +11,7 @@ import { TooltipViewComponent } from './views/tooltip-view/tooltip-view.componen
 import { LoaderViewComponent } from './views/loader-view/loader-view.component';
 import { BreadcrumbsViewComponent } from './views/breadcrumbs-view/breadcrumbs-view.component';
 import { ButtonViewComponent } from './views/button-view/button-view.component';
+import { AlertMessagesViewComponent } from './views/alert-messages-view/alert-messages-view.component';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { ButtonViewComponent } from './views/button-view/button-view.component';
         TooltipViewComponent, 
         LoaderViewComponent,
         BreadcrumbsViewComponent,
-        ButtonViewComponent 
+        ButtonViewComponent,
+        AlertMessagesViewComponent 
     ],
     imports: [ 
         CommonModule,
