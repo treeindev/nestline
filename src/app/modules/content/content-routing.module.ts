@@ -19,6 +19,11 @@ const routes: Routes = [
                     .then(m => m.ElementsModule)
             },
             {
+                path: 'forms',
+                loadChildren: () => import('./modules/forms/forms.module')
+                    .then(m => m.FormsModule)
+            },
+            {
                 path: '',
                 redirectTo: 'basics',
                 pathMatch: 'full'

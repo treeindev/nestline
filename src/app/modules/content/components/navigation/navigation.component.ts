@@ -62,7 +62,8 @@ export class NavigationComponent implements OnInit {
             },
             {
                 name: 'Forms',
-                icon: 'ion-md-clipboard'
+                icon: 'ion-md-clipboard',
+                link: '/content/forms'
             },
             {
                 name: 'Tables',
