@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./form-view.component.scss']
 })
 export class FormViewComponent implements OnInit {
+    public quillConfig = {
+        toolbar: [
+            ['bold', 'italic', 'underline']
+        ]
+    }
 
     constructor() { }
 

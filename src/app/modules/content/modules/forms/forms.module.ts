@@ -1,6 +1,7 @@
 // Dependencies
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { QuillModule } from 'ngx-quill';
 
 // Modules
 import { FormsRoutingModule } from './forms-routing.module';
@@ -12,7 +13,8 @@ import { FormViewComponent } from './views/form-view/form-view.component';
     ],
     imports: [
         CommonModule,
-        FormsRoutingModule
+        FormsRoutingModule,
+        QuillModule.forRoot()
     ],
     providers: [],
     exports: [

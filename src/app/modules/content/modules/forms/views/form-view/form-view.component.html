@@ -1,3 +1,297 @@
-<p>
-  form-view works!
-</p>
+<h2>Form elements</h2>
+<div class="cmp__cards">
+    <form class="cmp__form">
+        <h4 class="title">Default Aligment</h4>
+        <div class="group">
+            <label>Title of the page</label>
+            <input type="text" placeholder="Title of the new page">
+            <span class="small">You should enter a valid text on the input form.</span>
+        </div>
+        <div class="group">
+            <label>Description of the page</label>
+            <textarea></textarea>
+        </div>
+        <div class="grid">
+            <div class="group m-r-10">
+                <label>Identifier</label>
+                <input type="text" placeholder="Enter identifier">
+            </div>
+            <div class="group m-l-10">
+                <label>Reference</label>
+                <input type="text" placeholder="Enter a reference">
+            </div>
+        </div>
+        <div class="grid">
+            <div class="group m-r-10">
+                <label>Locked Text</label>
+                <input type="text" value="I am a locked text" readonly>
+            </div>
+            <div class="group m-l-10 error">
+                <label>Error state</label>
+                <input type="text" placeholder="Enter a reference">
+            </div>
+        </div>
+        <div class="group">
+            <label>Password</label>
+            <input type="password" class="fifth" placeholder="Enter Password">
+        </div>
+        <div class="group">
+            <label>URL Reference</label>
+            <input type="text" class="quarter" placeholder="Introduce a URL">
+        </div>
+        <div class="group">
+            <label for="calendar-date">Calendar Date</label>
+            <input type="date" class="quarter" name="calendar-date">
+        </div>
+        <div class="group">
+            <label for="calendar-time">Date Time</label>
+            <input type="datetime-local" class="quarter" name="calendar-time">
+        </div>
+        <div class="group">
+            <label>Preferences select</label>
+            <select class="third">
+                <option selected="">select</option>
+                <option>Large select</option>
+            </select>
+        </div>
+        <div class="group">
+            <label>Additional information</label>
+            <textarea class="half"></textarea>
+        </div>
+        <div class="group">
+            <label>Range an amount</label>
+            <div class="cmp__range third">
+                <input class="range" type="range" min="0" max="100" value="10" step="1" onmousemove="rangevalue1.value=value" />
+                <output id="rangevalue1">10</output>
+            </div>
+        </div>
+        <div class="group m-t-30">
+            <label>Switch to activate</label>
+            <div class="cmp__switch">
+                <input type="checkbox" id="switch1">
+                <label for="switch1">Active this account</label>
+            </div>
+        </div>
+        <div class="group">
+            <label for="file1">Upload data</label>
+            <input type="file" class="third" id="file1">
+        </div>
+        <h4 class="m-t-50 title">Horizontal Aligment</h4>
+        <div class="group grid">
+            <div class="m-r-10">
+                <div class="group row">
+                    <label>Title of the page</label>
+                    <input type="text" placeholder="Title of the new page">
+                </div>
+                <div class="group row">
+                    <label>Description of the page</label>
+                    <textarea placeholder="Enter your description"></textarea>
+                </div>
+            </div>
+            <div class="m-l-10">
+                <div class="group row">
+                    <label>Identifier</label>
+                    <input type="text" placeholder="Enter identifier">
+                </div>
+                <div class="group row">
+                    <label>Reference</label>
+                    <input type="text" placeholder="Enter a reference">
+                </div>
+            </div>
+        </div>
+        <h4 class="m-t-50 title">Additional elements</h4>
+        <label>Checkboxes</label>
+        <div class="group grid">
+            <div>
+                <div class="cmp__checkbox">
+                    <label>
+                        Checbox One
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="cmp__checkbox">
+                    <label>
+                        Checbox Two
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="cmp__checkbox">
+                    <label>
+                        Checbox Three
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="cmp__checkbox">
+                    <label>
+                        Checbox Four
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+            <div>
+                <div class="cmp__checkbox invalid">
+                    <label>
+                        Invalid Checkbox
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="cmp__checkbox">
+                    <label>
+                        Default Checked checkbox
+                        <input type="checkbox" checked>
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <div class="cmp__checkbox inactive">
+                    <label>
+                        Inactive Checkbox
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <label>Radio Buttons</label>
+        <div class="group grid">
+            <div>
+                <div class="cmp__radio_group">
+                    <div class="cmp__radio">
+                        <label>
+                            Rabio Button One
+                            <input type="radio" name="radio-button-example" value="1" checked="">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="cmp__radio">
+                        <label>
+                            Radio Button Two
+                            <input type="radio" name="radio-button-example" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="cmp__radio_group">
+                    <div class="cmp__radio invalid">
+                        <label>
+                            Invalid Radio button
+                            <input type="radio" name="radio-button-invalid" value="1" checked="">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="cmp__radio inactive">
+                        <label>
+                            Inactive Radio Button
+                            <input type="radio" name="radio-button-invalid" value="2">
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="group">
+            <label>Rich Text Editor</label>
+            <div class="cmp__quill-text-editor medium">
+                <quill-editor [modules]="quillConfig"></quill-editor>
+            </div>
+        </div>
+        <h4 class="m-t-90 title">Image Previewers and Uploaders</h4>
+        <div class="group">
+            <label for="file1">Default Mode</label>
+            <div class="grid">
+                <div class="cmp__image-previewer">
+                    <img src="assets/img/person-background.jpg">
+                </div>
+                <div class="cmp__image-previewer medium m-l-30">
+                    <img src="assets/img/person-background.jpg">
+                </div>
+                <div class="cmp__image-previewer short m-l-30">
+                    <img src="assets/img/person-background.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="group m-t-50">
+            <label for="file1">Editor Mode</label>
+            <div class="grid">
+                <div class="cmp__image-previewer editing">
+                    <i class="icon ion-md-close-circle"></i>
+                    <img src="assets/img/person-background.jpg">
+                </div>
+                <div class="cmp__image-previewer editing medium m-l-30">
+                    <i class="icon ion-md-close-circle"></i>
+                    <img src="assets/img/person-background.jpg">
+                </div>
+                <div class="cmp__image-previewer editing short m-l-30">
+                    <i class="icon ion-md-close-circle"></i>
+                    <img src="assets/img/person-background.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="group m-t-50">
+            <label>Image Uploader</label>
+            <div class="grid">
+                <div class="cmp__image-uploader">
+                    <div class="uploader">
+                        <input id="image-uploader-1" type="file">
+                    </div>
+                    <div class="placeholder">
+                        <label for="image-uploader-1">
+                            <i class="icon ion-md-cloud-upload"></i>
+                            <span>Upload file</span>
+                        </label>
+                    </div>
+                    <div class="cmp__image-previewer"></div>
+                </div>
+                <div class="cmp__image-uploader medium m-l-30">
+                    <div class="uploader">
+                        <input id="image-uploader-1" type="file">
+                    </div>
+                    <div class="placeholder">
+                        <label for="image-uploader-1">
+                            <i class="icon ion-md-cloud-upload"></i>
+                            <span>Upload file</span>
+                        </label>
+                    </div>
+                    <div class="cmp__image-previewer"></div>
+                </div>
+                <div class="cmp__image-uploader short m-l-30">
+                    <div class="uploader">
+                        <input id="image-uploader-1" type="file">
+                    </div>
+                    <div class="placeholder">
+                        <label for="image-uploader-1">
+                            <i class="icon ion-md-cloud-upload"></i>
+                            <span>Upload file</span>
+                        </label>
+                    </div>
+                    <div class="cmp__image-previewer"></div>
+                </div>
+            </div>
+            <label class="m-t-30">Image Uploader + Previewing</label>
+            <div class="cmp__image-uploader preview short">
+                <div class="uploader">
+                    <input id="image-uploader-1" type="file">
+                </div>
+                <div class="placeholder">
+                    <label for="image-uploader-1">
+                        <i class="icon ion-md-cloud-upload"></i>
+                        <span>Upload file</span>
+                    </label>
+                </div>
+                <div class="cmp__image-previewer editing short">
+                    <i class="icon ion-md-close-circle"></i>
+                    <img src="assets/img/person-background.jpg">
+                </div>
+            </div>
+        </div>
+        <div class="group m-t-30">
+            <button>Submit</button>
+        </div>
+    </form>
+</div>
