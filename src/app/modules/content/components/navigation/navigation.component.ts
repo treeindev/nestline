@@ -184,16 +184,13 @@ export class NavigationComponent implements OnInit {
                 if ( child.link && child.link === url ) {
                     child.active = true;
                     active = true;
-                    console.log( child.name, child.active );
                 } else {
                     child.active = false;
-                    console.log( child.name, child.active );
                 }
             });
 
             item.active = active;
         });
-        console.log( this.items );
     }
 
 }

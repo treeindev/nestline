@@ -4,21 +4,20 @@ import { CommonModule } from '@angular/common';
 import { QuillModule } from 'ngx-quill';
 
 // Components
-import { FormsRoutingModule } from './forms-routing.module';
-import { FormViewComponent } from './views/form-view/form-view.component';
+import { TablesRoutingModule } from './tables-routing.module';
+import { TableViewComponent } from './views/table-view/table-view.component';
 
 @NgModule({
     declarations: [
-        FormViewComponent
+        TableViewComponent
     ],
     imports: [
         CommonModule,
-        FormsRoutingModule,
-        QuillModule.forRoot()
+        TablesRoutingModule
     ],
     providers: [],
     exports: [
-        FormViewComponent
+        TableViewComponent
     ]
 })
-export class FormsModule { }
+export class TablesModule { }

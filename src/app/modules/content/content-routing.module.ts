@@ -24,6 +24,11 @@ const routes: Routes = [
                     .then(m => m.FormsModule)
             },
             {
+                path: 'tables',
+                loadChildren: () => import('./modules/tables/tables.module')
+                    .then(m => m.TablesModule)
+            },
+            {
                 path: '',
                 redirectTo: 'basics',
                 pathMatch: 'full'
