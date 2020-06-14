@@ -29,6 +29,11 @@ const routes: Routes = [
                     .then(m => m.TablesModule)
             },
             {
+                path: 'layout',
+                loadChildren: () => import('./modules/layout/layout.module')
+                    .then(m => m.LayoutModule)
+            },
+            {
                 path: '',
                 redirectTo: 'basics',
                 pathMatch: 'full'

@@ -1,7 +1,6 @@
 // Dependencies
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { QuillModule } from 'ngx-quill';
 
 // Components
 import { TablesRoutingModule } from './tables-routing.module';

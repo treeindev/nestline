@@ -67,7 +67,8 @@ export class NavigationComponent implements OnInit {
             },
             {
                 name: 'Tables',
-                icon: 'ion-md-grid'
+                icon: 'ion-md-grid',
+                link: '/content/tables'
             },
             {
                 name: 'Layout',
@@ -76,15 +77,11 @@ export class NavigationComponent implements OnInit {
                 children: [
                     {
                         name: 'Cards',
-                        link: 'cards'
+                        link: '/content/layout/cards'
                     },
                     {
                         name: 'Galleries',
-                        link: 'galleries'
-                    },
-                    {
-                        name: 'Grids',
-                        link: 'grids'
+                        link: '/content/layout/galleries'
                     }
                 ]
             },
