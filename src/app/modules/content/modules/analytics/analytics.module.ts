@@ -1,6 +1,8 @@
 // Dependencies
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import * as echarts from 'echarts';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 // Components
 import { AnalyticsViewComponent } from './views/analytics-view/analytics-view.component';
@@ -12,7 +14,10 @@ import { AnalyticsRoutingModule } from './analytics-routing.module';
     ],
     imports: [
         CommonModule,
-        AnalyticsRoutingModule
+        AnalyticsRoutingModule,
+        NgxEchartsModule.forRoot({
+            echarts
+        })
     ],
     providers: [],
     exports: [

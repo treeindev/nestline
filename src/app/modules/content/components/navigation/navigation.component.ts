@@ -91,7 +91,8 @@ export class NavigationComponent implements OnInit {
             },
             {
                 name: 'Analytics',
-                icon: 'ion-ios-stats'
+                icon: 'ion-ios-stats',
+                link: '/content/analytics'
             },
             {
                 name: 'Views',

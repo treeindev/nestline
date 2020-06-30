@@ -1,3 +1,11 @@
-<p>
-  analytics-view works!
-</p>
+<h2>Analytics</h2>
+
+<h3>Line chart</h3>
+<div class="cmp__cards">
+    <div echarts [options]="optionsLineChart" class="demo-chart"></div>
+</div>
+<h3>Bar chart</h3>
+<div class="cmp__cards">
+    <div echarts [options]="optionsBarCompareChart" class="demo-chart"></div>
+    <div echarts [options]="optionsBarChart" class="demo-chart"></div>
+</div>
