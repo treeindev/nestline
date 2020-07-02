@@ -5,10 +5,12 @@ import { CommonModule } from '@angular/common';
 // Components
 import { TablesRoutingModule } from './tables-routing.module';
 import { TableViewComponent } from './views/table-view/table-view.component';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
     declarations: [
-        TableViewComponent
+        TableViewComponent,
+        TableComponent
     ],
     imports: [
         CommonModule,

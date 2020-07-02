@@ -1,0 +1,14 @@
+<section class="cmp__table {{class}}">
+    <header class="header">
+        <div *ngFor="let col of header" class="{{col.class}}" >
+            <span>{{col.value}}</span>
+        </div>
+    </header>
+    <div class="content">
+        <div *ngFor="let row of body">
+            <div *ngFor="let col of row" class="{{col.class}}" >
+                <span>{{col.value}}</span>
+            </div>
+        </div>
+    </div>
+</section>
