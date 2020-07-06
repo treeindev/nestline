@@ -9,6 +9,10 @@ export class TableComponent implements OnInit {
     @Input() header: Array<TableField>;
     @Input() body: Array<Array<TableField>>;
     @Input() class = '';
+    @Input() contentClass = '';
+    @Input() defaultText = 'No data available';
+    @Input() editable = false;
+    @Input() editableHeader = 'Edit';
 
     ngOnInit() {
     }

@@ -3,11 +3,23 @@
         <div *ngFor="let col of header" class="{{col.class}}" >
             <span>{{col.value}}</span>
         </div>
+        <div *ngIf="editable" class="w-10">
+            <span>{{editableHeader}}</span>
+        </div>
     </header>
-    <div class="content">
+    <div class="content {{contentClass}}">
         <div *ngFor="let row of body">
             <div *ngFor="let col of row" class="{{col.class}}" >
                 <span>{{col.value}}</span>
+            </div>
+            <div *ngIf="editable" class="w-10 controls">
+                <i class="icon ion-md-create"></i>
+                <i class="icon ion-md-trash"></i>
+            </div>
+        </div>
+        <div *ngIf="!body || body.length === 0">
+            <div class="center w-100">
+                <span>{{defaultText}}</span>
             </div>
         </div>
     </div>
