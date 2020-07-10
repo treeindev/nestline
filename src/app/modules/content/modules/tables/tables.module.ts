@@ -6,11 +6,13 @@ import { CommonModule } from '@angular/common';
 import { TablesRoutingModule } from './tables-routing.module';
 import { TableViewComponent } from './views/table-view/table-view.component';
 import { TableComponent } from './components/table/table.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
     declarations: [
         TableViewComponent,
-        TableComponent
+        TableComponent,
+        PaginationComponent
     ],
     imports: [
         CommonModule,
