@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'app-pagination',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./pagination.component.scss']
 })
 export class PaginationComponent implements OnInit {
+    @Input() prev: string = "Previous";
+    @Input() next: string = "Next";
+    @Input() pages: number = 1;
+    @Input() active: number = 1;
 
     constructor() { }
 

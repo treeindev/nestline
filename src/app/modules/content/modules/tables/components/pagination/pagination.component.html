@@ -1,3 +1,13 @@
-<p>
-  pagination works!
-</p>
+<nav class="cmp__pagination">
+    <ul>
+        <li>
+            <a>{{prev}}</a>
+        </li>
+        <li *ngFor="let n of [].constructor(pages); let i=index;">
+            <a [ngClass]="i+1 === active ? 'active' : ''">{{i+1}}</a>
+        </li>
+        <li>
+            <a>{{next}}</a>
+        </li>
+    </ul>
+</nav>
