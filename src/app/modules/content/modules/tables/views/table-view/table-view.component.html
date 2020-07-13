@@ -3,64 +3,12 @@
     <h4 class="title">Pagination</h4>
     <app-pagination [pages]="5" [active]="3">
     </app-pagination>
-    <nav class="cmp__pagination">
-        <ul>
-            <li>
-                <a>Previous</a>
-            </li>
-            <li>
-                <a>1</a>
-            </li>
-            <li>
-                <a>2</a>
-            </li>
-            <li>
-                <a>3</a>
-            </li>
-            <li>
-                <a>Next</a>
-            </li>
-        </ul>
-    </nav>
-    <nav class="cmp__pagination m-t-40">
-        <ul>
-            <li>
-                <a class="disabled">Previous</a>
-            </li>
-            <li>
-                <a>1</a>
-            </li>
-            <li>
-                <a>2</a>
-            </li>
-            <li>
-                <a>3</a>
-            </li>
-            <li>
-                <a>Next</a>
-            </li>
-        </ul>
-    </nav>
-    <nav class="cmp__pagination m-t-40 center">
-        <ul>
-            <li>
-                <a class="disabled">Previous</a>
-            </li>
-            <li>
-                <a>1</a>
-            </li>
-            <li>
-                <a class="active">2</a>
-            </li>
-            <li>
-                <a>3</a>
-            </li>
-            <li>
-                <a>Next</a>
-            </li>
-        </ul>
-    </nav>
-    
+    <app-pagination [pages]="3" [active]="1" class="m-t-40">
+    </app-pagination>
+    <app-pagination [pages]="5" [active]="5" class="m-t-40">
+    </app-pagination>
+    <app-pagination [pages]="5" [active]="1" class="m-t-40 center">
+    </app-pagination>
     <h4 class="title m-t-50">Tables: Default</h4>
     <app-table [header]="example1header" [body]="example1body"></app-table>
 

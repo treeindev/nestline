@@ -10,6 +10,7 @@ export class PaginationComponent implements OnInit {
     @Input() next: string = "Next";
     @Input() pages: number = 1;
     @Input() active: number = 1;
+    @Input() class: string = '';
 
     constructor() { }
 

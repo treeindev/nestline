@@ -1,13 +1,13 @@
-<nav class="cmp__pagination">
+<nav class="cmp__pagination {{class}}">
     <ul>
         <li>
-            <a>{{prev}}</a>
+            <a [ngClass]="active === 1 ? 'disabled' : ''">{{prev}}</a>
         </li>
         <li *ngFor="let n of [].constructor(pages); let i=index;">
             <a [ngClass]="i+1 === active ? 'active' : ''">{{i+1}}</a>
         </li>
         <li>
-            <a>{{next}}</a>
+            <a [ngClass]="active === pages ? 'disabled' : ''">{{next}}</a>
         </li>
     </ul>
 </nav>
