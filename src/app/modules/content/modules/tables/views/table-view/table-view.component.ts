@@ -32,7 +32,7 @@ export class TableViewComponent implements OnInit {
     example1body: Array<Array<TableField>> = [
         [
             {
-                value: '1',
+                value: 19,
                 class: 'w-10'
             },
             {
@@ -54,89 +54,89 @@ export class TableViewComponent implements OnInit {
         ],
         [
             {
-                value: '1',
+                value: 21,
                 class: 'w-10'
             },
             {
-                value: 'Dillon',
+                value: 'Mike',
                 class: 'w-20'
             },
             {
-                value: 'Cote',
+                value: 'Spark',
                 class: 'w-20'
             },
             {
-                value: 'username2019',
+                value: 'username2020',
                 class: 'w-20'
             },
             {
-                value: '01-03-2019 - 09:10:25',
+                value: '10-03-2019 - 09:10:25',
                 class: 'w-30'
             }
         ],
         [
             {
-                value: '1',
+                value: 3,
                 class: 'w-10'
             },
             {
-                value: 'Dillon',
+                value: 'John',
                 class: 'w-20'
             },
             {
-                value: 'Cote',
+                value: 'William',
                 class: 'w-20'
             },
             {
-                value: 'username2019',
+                value: 'codesignal',
                 class: 'w-20'
             },
             {
-                value: '01-03-2019 - 09:10:25',
+                value: '01-03-2009 - 09:10:25',
                 class: 'w-30'
             }
         ],
         [
             {
-                value: '1',
+                value: 10,
                 class: 'w-10'
             },
             {
-                value: 'Dillon',
+                value: 'Carbon',
                 class: 'w-20'
             },
             {
-                value: 'Cote',
+                value: 'Box',
                 class: 'w-20'
             },
             {
-                value: 'username2019',
+                value: 'slider10',
                 class: 'w-20'
             },
             {
-                value: '01-03-2019 - 09:10:25',
+                value: '01-03-1989 - 09:10:25',
                 class: 'w-30'
             }
         ],
         [
             {
-                value: '1',
+                value: 15,
                 class: 'w-10'
             },
             {
-                value: 'Dillon',
+                value: 'Montserrat',
                 class: 'w-20'
             },
             {
-                value: 'Cote',
+                value: 'Blue',
                 class: 'w-20'
             },
             {
-                value: 'username2019',
+                value: 'username2009',
                 class: 'w-20'
             },
             {
-                value: '01-03-2019 - 09:10:25',
+                value: '01-01-2050 - 09:10:25',
                 class: 'w-30'
             }
         ]

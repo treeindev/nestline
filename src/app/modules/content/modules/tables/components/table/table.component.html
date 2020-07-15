@@ -1,6 +1,6 @@
 <section class="cmp__table {{class}}">
     <header class="header">
-        <div *ngFor="let col of header" class="{{col.class}}" >
+        <div *ngFor="let col of header; let i = index;" class="{{col.class}}" (click)="order(i)">
             <span>{{col.value}}</span>
         </div>
         <div *ngIf="editable" class="w-10">
