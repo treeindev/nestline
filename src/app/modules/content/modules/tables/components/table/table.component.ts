@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { TableField } from './table.models';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
+import { TableField, TableEvent } from './table.models';
 
 @Component({
     selector: 'app-table',
@@ -15,14 +15,23 @@ export class TableComponent implements OnInit {
     @Input() allowOrdering = false;
     @Input() editableHeader = 'Edit';
 
+    @Output() onEdit = new EventEmitter<TableEvent>();
+    @Output() onRemove = new EventEmitter<TableEvent>();
+
     private ascendingOrder = false;
 
     ngOnInit() {
-        // Create new instances of the received objects to ensure independence.
+        // Create new instances of the received objects to ensure independence between objects.
         this.header = [...this.header];
         this.body = [...this.body];
     }
 
+    /**
+     * Orders all rows of a table based on a given column.
+     * The ordering sequence (ascendingOrder) is been altered at the end of each execution.
+     * 
+     * @param index - index of the column to order.
+     */
     protected order( index: number ): void {
         if ( !this.allowOrdering ) { return }
         
@@ -37,5 +46,19 @@ export class TableComponent implements OnInit {
         });
 
         this.ascendingOrder = !this.ascendingOrder;
+    }
+
+    /**
+     * Emits new EDIT event when user clicks
+     */
+    protected edit( field:Array<TableField>, index: number ) {
+        this.onEdit.emit( { field:field, index: index } );
+    }
+
+    /**
+     * Emits new REMOVE event when user clicks
+     */
+    protected remove( field:Array<TableField>, index: number ) {
+        this.onRemove.emit( { field:field, index: index } );
     }
 }

@@ -8,13 +8,13 @@
         </div>
     </header>
     <div class="content {{contentClass}}">
-        <div *ngFor="let row of body">
+        <div *ngFor="let row of body; let i = index;">
             <div *ngFor="let col of row" class="{{col.class}}" >
                 <span>{{col.value}}</span>
             </div>
             <div *ngIf="editable" class="w-10 controls">
-                <i class="icon ion-md-create"></i>
-                <i class="icon ion-md-trash"></i>
+                <i (click)="edit(row, i)" class="icon ion-md-create"></i>
+                <i (click)="remove(row, i)" class="icon ion-md-trash"></i>
             </div>
         </div>
         <div *ngIf="!body || body.length === 0">
