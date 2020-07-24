@@ -1,13 +1,13 @@
 <nav class="cmp__pagination {{class}}">
     <ul>
         <li>
-            <a [ngClass]="active === 1 ? 'disabled' : ''">{{prev}}</a>
+            <a (click)="active != 1 ? onSwitch( active - 1 ) : ''" [ngClass]="active === 1 ? 'disabled' : ''">{{prev}}</a>
         </li>
         <li *ngFor="let n of [].constructor(pages); let i=index;">
-            <a [ngClass]="i+1 === active ? 'active' : ''">{{i+1}}</a>
+            <a (click)="i+1 != active ? onSwitch( i+1 ) : ''" [ngClass]="i+1 === active ? 'active' : ''">{{i+1}}</a>
         </li>
         <li>
-            <a [ngClass]="active === pages ? 'disabled' : ''">{{next}}</a>
+            <a (click)="active != pages ? onSwitch( active + 1 ) : ''" [ngClass]="active === pages ? 'disabled' : ''">{{next}}</a>
         </li>
     </ul>
 </nav>

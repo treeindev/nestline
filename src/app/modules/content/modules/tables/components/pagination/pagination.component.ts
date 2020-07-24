@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-pagination',
@@ -12,9 +12,19 @@ export class PaginationComponent implements OnInit {
     @Input() active: number = 1;
     @Input() class: string = '';
 
+    @Output() switch = new EventEmitter<number>();
+
     constructor() { }
 
     ngOnInit() {
+    }
+
+    /**
+     * Trigger event when user clickes on pagination
+     */
+    onSwitch( destination: number ) {
+        this.active = destination;
+        this.switch.emit( destination );
     }
 
 }
