@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CookiesService } from './services/cookies.service';
+import { UtilsService } from './services/utils.service';
 
 @NgModule({
     declarations: [],
     imports: [],
     providers: [
-        CookiesService
+        CookiesService,
+        UtilsService
     ],
     exports: []
 })
