@@ -52,7 +52,14 @@
     <p>Sample embed video</p>
     <div class="cmp__gallery video">
         <div>
-            <iframe src="https://player.vimeo.com/video/54511177" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <app-videoplayer
+                [aspectRatio]='9/16'
+                [width]='60'
+                [border]=''
+                [borderRadius]=''
+                [video]='vimeoSample'
+            >
+            </app-videoplayer>
         </div>
     </div>
     <p class="m-t-50">Video presentation</p>

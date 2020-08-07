@@ -1,0 +1,10 @@
+<iframe 
+    *ngIf="ready && video.service === videoServices.VIMEO" 
+    [src]="source"
+    [style.width.px]="size[0]"
+    [style.height.px]="size[1]"
+    [style.borderRadius.px]="borderRadius"
+    frameborder="0"
+    allow="autoplay; fullscreen" 
+    allowfullscreen>
+</iframe>

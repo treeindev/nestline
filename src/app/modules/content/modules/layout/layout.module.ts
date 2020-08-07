@@ -7,12 +7,14 @@ import { LayoutRoutingModule } from './layout-routing.module';
 import { LayoutComponent } from './layout.component';
 import { CardsComponent } from './views/cards/cards.component';
 import { GalleriesComponent } from './views/galleries/galleries.component';
+import { VideoplayerComponent } from './components/videoplayer/videoplayer.component';
 
 @NgModule({
     declarations: [ 
         CardsComponent,
         LayoutComponent,
-        GalleriesComponent
+        GalleriesComponent,
+        VideoplayerComponent
     ],
     imports: [
         CommonModule,
