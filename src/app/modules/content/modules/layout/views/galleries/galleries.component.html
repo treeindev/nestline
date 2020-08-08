@@ -54,7 +54,7 @@
         <div>
             <app-videoplayer
                 [aspectRatio]='9/16'
-                [width]='60'
+                [width]='30'
                 [border]=''
                 [borderRadius]=''
                 [video]='vimeoSample'
@@ -64,7 +64,14 @@
     </div>
     <p class="m-t-50">Video presentation</p>
     <div class="cmp__gallery video presentation">
-        <iframe src="https://player.vimeo.com/video/54511177" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <app-videoplayer
+                [aspectRatio]='9/16'
+                [width]='40'
+                [border]=''
+                [borderRadius]=''
+                [video]='vimeoSample'
+            >
+            </app-videoplayer>
         <h2>Video Presentation: Pictures Landscape</h2>
         <div class="user">
             <img src="assets/img/profile.svg">

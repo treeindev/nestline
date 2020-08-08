@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Video, AvailableVideoServices } from './videoplayer.model';
+import { UtilsService } from 'src/app/shared/services/utils.service';
 
 @Component({
     selector: 'app-videoplayer',
@@ -19,15 +20,18 @@ export class VideoplayerComponent implements OnInit {
     public videoServices = AvailableVideoServices;
     public size: Array<number>;
 
-    constructor( private sanitizer: DomSanitizer ) { }
+    constructor( private sanitizer: DomSanitizer, private utils: UtilsService ) { }
 
     ngOnInit() {
         this.source = this.sanitizer.bypassSecurityTrustResourceUrl( this.generateSource() );
-        this.size = this.generateSize();
-        debugger;
+        this.generateSize();
         this.ready = true;
+        this.utils.getWindowResizeObservable().subscribe( e => this.generateSize() );
     }
 
+    /**
+     * Generated the iframe's "src" property.
+     */
     private generateSource(): string {
         if ( !this.video ) { return; }
         switch (this.video.service) {
@@ -42,10 +46,16 @@ export class VideoplayerComponent implements OnInit {
         }
     }
 
+    /**
+     * Generate Vimeo iframe.
+     */
     private generateVimeoSource(): string {
         return `https://player.vimeo.com/video/${this.video.source}`;
     }
     
+    /**
+     * Generate Youtube iframe.
+     */
     private generateYoutubeSource(): string {
         return `https://www.youtube.com/embed/${this.video.source}`;
     }
@@ -56,14 +66,14 @@ export class VideoplayerComponent implements OnInit {
      * aspect ratio.
      * window size
      */
-    private generateSize(): Array<number> {
-        if ( !this.width || !this.aspectRatio ) { return [0,0] }
+    private generateSize(): void {
+        if ( !this.width || !this.aspectRatio ) { return; }
         
-        const windowSize = 1000;
+        const windowSize = window.innerWidth;
         const height = ( windowSize * this.width / 100 ) * this.aspectRatio;
         const width = windowSize * this.width / 100;
-
-        return [ width, height ];
+        
+        this.size = [ width, height ];
     }
 
 }
