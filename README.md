@@ -14,4 +14,4 @@
 - Based on Angular+6.
 - Modularized components and nested routings.
 - +15 Predefined UI Components.
-- Customizable themes allowing cutom stylings. 
+- Customizable themes allowing to change the visual appearance of a UI with ease.
