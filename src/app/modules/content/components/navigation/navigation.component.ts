@@ -118,6 +118,19 @@ export class NavigationComponent implements OnInit {
             return;
         }
 
+        // If user has clicked on an external link, prevent internal navigation.
+        if ( !item.link && item.url ) {
+            switch ( item.target ) {
+                case '_blank':
+                    window.open(item.url);
+                    break;
+                default:
+                    window.location.href = item.url;
+                    break;
+            }
+            return;
+        }
+
         // If user has clicked on a menu with no children, navigate to path.
         await this.router.navigate( [item.link] );
         this.updateMenuStatus();

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 /**
- * The application routing follows the Lazy-loading feature modules described on Anuglar's documentaiton: 
+ * The application routing follows the Lazy-loading feature modules described on Angular's documentaiton: 
  * https://angular.io/guide/lazy-loading-ngmodules
  * 
  * Each module describes its routing structure in a separate module,
